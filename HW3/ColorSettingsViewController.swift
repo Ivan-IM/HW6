@@ -33,10 +33,6 @@ class ColorSettingsViewController: UIViewController {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 15
         
-        redSlider.minimumTrackTintColor = .red
-        greenSlider.minimumTrackTintColor = .green
-        
-        
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
@@ -48,7 +44,17 @@ class ColorSettingsViewController: UIViewController {
         greenLabel.text = String(format: "%.2f", greenSlider.value)
         blueLabel.text = String(format: "%.2f", blueSlider.value)
         
+        redField.text = String(format: "%.2f", redSlider.value)
+        greenField.text = String(format: "%.2f", greenSlider.value)
+        blueField.text = String(format: "%.2f", blueSlider.value)
         
+        redField.text = String(format: "%.2f", setColor.red)
+        greenField.text = String(format: "%.2f", setColor.green)
+        blueField.text = String(format: "%.2f", setColor.blue)
+        
+        redField.deligate = self
+        greenField.deligate = self
+        blueField.deligate = self
     }
     
     @IBAction func rgbSlider(_ sender: UISlider) {
@@ -64,16 +70,17 @@ class ColorSettingsViewController: UIViewController {
         blueLabel.text = String(format: "%.2f", blueSlider.value)
 
     }
-    @IBAction func saveButtun() {
-        view.endEditing(true)
+    @IBAction func donButton(_ sender: Any) {
         delegate?.color(setColor: setColor)
         dismiss(animated: true)
     }
+  
 }
 
 extension ColorSettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        setColor = SetColor (red: Float(redSlider.value), green: Float(greenSlider.value), blue: Float(blueSlider.value))
+        setColor = SetColor(red: Float (redField.text ?? "") ?? 0,
+                            green: Float(greenField.text ?? "") ?? 0,
+                            blue: Float(blueField.text ?? "") ?? 0)
     }
-    
 }
