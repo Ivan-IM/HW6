@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		CFE7948B266B6D560042E105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE7948A266B6D560042E105 /* AppDelegate.swift */; };
 		CFE7948D266B6D560042E105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE7948C266B6D560042E105 /* SceneDelegate.swift */; };
-		CFE7948F266B6D560042E105 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE7948E266B6D560042E105 /* ViewController.swift */; };
+		CFE7948F266B6D560042E105 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE7948E266B6D560042E105 /* MainViewController.swift */; };
 		CFE79492266B6D560042E105 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE79490266B6D560042E105 /* Main.storyboard */; };
 		CFE79494266B6D570042E105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE79493266B6D570042E105 /* Assets.xcassets */; };
 		CFE79497266B6D570042E105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE79495266B6D570042E105 /* LaunchScreen.storyboard */; };
-		CFE794A1266B72C90042E105 /* ColorSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE794A0266B72C90042E105 /* ColorSettingViewController.swift */; };
+		CFE794A1266B72C90042E105 /* ColorSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE794A0266B72C90042E105 /* ColorSettingsViewController.swift */; };
+		CFE794A3266B8CA30042E105 /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE794A2266B8CA30042E105 /* RGB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CFE79487266B6D560042E105 /* HW3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE7948A266B6D560042E105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE7948C266B6D560042E105 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CFE7948E266B6D560042E105 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CFE7948E266B6D560042E105 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CFE79491266B6D560042E105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFE79493266B6D570042E105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE79496266B6D570042E105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE79498266B6D570042E105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFE794A0266B72C90042E105 /* ColorSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettingViewController.swift; sourceTree = "<group>"; };
+		CFE794A0266B72C90042E105 /* ColorSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettingsViewController.swift; sourceTree = "<group>"; };
+		CFE794A2266B8CA30042E105 /* RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 			children = (
 				CFE7948A266B6D560042E105 /* AppDelegate.swift */,
 				CFE7948C266B6D560042E105 /* SceneDelegate.swift */,
-				CFE794A0266B72C90042E105 /* ColorSettingViewController.swift */,
-				CFE7948E266B6D560042E105 /* ViewController.swift */,
+				CFE794A0266B72C90042E105 /* ColorSettingsViewController.swift */,
+				CFE7948E266B6D560042E105 /* MainViewController.swift */,
+				CFE794A2266B8CA30042E105 /* RGB.swift */,
 				CFE79490266B6D560042E105 /* Main.storyboard */,
 				CFE79493266B6D570042E105 /* Assets.xcassets */,
 				CFE79495266B6D570042E105 /* LaunchScreen.storyboard */,
@@ -140,9 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFE7948F266B6D560042E105 /* ViewController.swift in Sources */,
+				CFE794A3266B8CA30042E105 /* RGB.swift in Sources */,
+				CFE7948F266B6D560042E105 /* MainViewController.swift in Sources */,
 				CFE7948B266B6D560042E105 /* AppDelegate.swift in Sources */,
-				CFE794A1266B72C90042E105 /* ColorSettingViewController.swift in Sources */,
+				CFE794A1266B72C90042E105 /* ColorSettingsViewController.swift in Sources */,
 				CFE7948D266B6D560042E105 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ColorSettingViewController: UIViewController {
+protocol colorSettingsViewControllerDelegate {
+    func color(setColor: SetColor)
+}
+
+class ColorSettingsViewController: UIViewController {
     @IBOutlet weak var colorView: UIView!
     
     @IBOutlet weak var redLabel: UILabel!
@@ -22,12 +26,16 @@ class ColorSettingViewController: UIViewController {
     @IBOutlet weak var greenField: UITextField!
     @IBOutlet weak var blueField: UITextField!
     
+    var delegate: colorSettingsViewControllerDelegate?
+    var setColor: SetColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 15
         
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
+        
         
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
@@ -39,6 +47,7 @@ class ColorSettingViewController: UIViewController {
         redLabel.text = String(format: "%.2f", redSlider.value)
         greenLabel.text = String(format: "%.2f", greenSlider.value)
         blueLabel.text = String(format: "%.2f", blueSlider.value)
+        
         
     }
     
@@ -47,21 +56,24 @@ class ColorSettingViewController: UIViewController {
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
-            alpha: 1
+            alpha: 1.0
         )
         
         redLabel.text = String(format: "%.2f", redSlider.value)
         greenLabel.text = String(format: "%.2f", greenSlider.value)
         blueLabel.text = String(format: "%.2f", blueSlider.value)
-    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    @IBAction func saveButtun() {
+        view.endEditing(true)
+        delegate?.color(setColor: setColor)
+        dismiss(animated: true)
+    }
+}
 
+extension ColorSettingsViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        setColor = SetColor (red: Float(redSlider.value), green: Float(greenSlider.value), blue: Float(blueSlider.value))
+    }
+    
 }
