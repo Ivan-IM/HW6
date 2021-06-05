@@ -8,7 +8,7 @@
 import Foundation
 
 struct SetColor {
-    let red: Float
-    let green: Float
-    let blue: Float
+    var red: Float
+    var green: Float
+    var blue: Float
 }

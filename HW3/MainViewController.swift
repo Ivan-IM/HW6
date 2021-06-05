@@ -16,10 +16,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? ColorSettingsViewController else { return }
-        destination.delegate = self
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let destination = segue.destination as? ColorSettingsViewController else { return }
+//        destination.delegate = self
+//    }
     
 
 }
