@@ -13,6 +13,7 @@
 		CFE79492266B6D560042E105 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE79490266B6D560042E105 /* Main.storyboard */; };
 		CFE79494266B6D570042E105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE79493266B6D570042E105 /* Assets.xcassets */; };
 		CFE79497266B6D570042E105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE79495266B6D570042E105 /* LaunchScreen.storyboard */; };
+		CFE794A1266B72C90042E105 /* ColorSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE794A0266B72C90042E105 /* ColorSettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CFE79493266B6D570042E105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE79496266B6D570042E105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE79498266B6D570042E105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFE794A0266B72C90042E105 /* ColorSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				CFE7948A266B6D560042E105 /* AppDelegate.swift */,
 				CFE7948C266B6D560042E105 /* SceneDelegate.swift */,
+				CFE794A0266B72C90042E105 /* ColorSettingViewController.swift */,
 				CFE7948E266B6D560042E105 /* ViewController.swift */,
 				CFE79490266B6D560042E105 /* Main.storyboard */,
 				CFE79493266B6D570042E105 /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			files = (
 				CFE7948F266B6D560042E105 /* ViewController.swift in Sources */,
 				CFE7948B266B6D560042E105 /* AppDelegate.swift in Sources */,
+				CFE794A1266B72C90042E105 /* ColorSettingViewController.swift in Sources */,
 				CFE7948D266B6D560042E105 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
