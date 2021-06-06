@@ -69,11 +69,6 @@ class ColorSettingsViewController: UIViewController {
         blueField.text = String(format: "%.2f", blueSlider.value)
 
     }
-    @IBAction func rgbTextField(_ sender: Any) {
-        redSlider.value = Float(redField.text ?? "0") ?? 0.0
-        greenSlider.value = Float(greenField.text ?? "0") ?? 0.0
-        blueSlider.value = Float(blueField.text ?? "0") ?? 0.0
-    }
     
     @IBAction func saveButton() {
         delegate?.setColor(color: colorView.backgroundColor ?? UIColor(red: 0, green: 1, blue: 0, alpha: 1))

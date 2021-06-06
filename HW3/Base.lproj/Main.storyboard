@@ -19,7 +19,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="ESe-Pk-aXR">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="qmr-Rh-4LR">
+                        <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="qmr-Rh-4LR">
                             <connections>
                                 <segue destination="1eV-0e-a6r" kind="show" id="uey-5v-KSa"/>
                             </connections>
@@ -209,7 +209,6 @@
         <!--Navigation Controller-->
         <scene sceneID="c1C-Yg-IyD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cTO-mb-f5l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pdg-4G-kAp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Fk-xx-jrd">
@@ -221,11 +220,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="idi-er-hjV"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cTO-mb-f5l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
