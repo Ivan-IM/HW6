@@ -28,6 +28,7 @@ class ColorSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideNavigationBar()
         colorView.layer.cornerRadius = 15
         
         colorView.backgroundColor = UIColor(
@@ -45,6 +46,10 @@ class ColorSettingsViewController: UIViewController {
         greenField.text = String(format: "%.2f", greenSlider.value)
         blueField.text = String(format: "%.2f", blueSlider.value)
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     @IBAction func rgbSlider(_ sender: UISlider) {

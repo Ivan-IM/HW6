@@ -20,12 +20,21 @@ class MainViewController: UIViewController, ViewSetColorDelegate {
     
     func setColor(color: UIColor) {
         view.backgroundColor = color
+        self.showNavigationBar()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     @IBAction func unwind(segue: UIStoryboardSegue) { }
 }
 
+extension UIViewController {
+    func hideNavigationBar() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    func showNavigationBar() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+}
