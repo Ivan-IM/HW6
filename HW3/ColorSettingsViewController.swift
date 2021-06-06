@@ -7,9 +7,7 @@
 
 import UIKit
 
-protocol colorSettingsViewControllerDelegate {
-    func color(setColor: SetColor)
-}
+
 
 class ColorSettingsViewController: UIViewController {
     @IBOutlet weak var colorView: UIView!
@@ -26,9 +24,7 @@ class ColorSettingsViewController: UIViewController {
     @IBOutlet weak var greenField: UITextField!
     @IBOutlet weak var blueField: UITextField!
     
-    private var setColor = SetColor (red: 1.0, green: 1.0, blue: 1.0)
-    //var delegate: colorSettingsViewControllerDelegate?
-    
+    var delegate: ViewSetColorDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,16 +64,14 @@ class ColorSettingsViewController: UIViewController {
         blueField.text = String(format: "%.2f", blueSlider.value)
 
     }
-    @IBAction func donButton(_ sender: Any) {
-        //delegate?.color(setColor: setColor)
-        dismiss(animated: true)
+    @IBAction func rgbTextField(_ sender: Any) {
+        redSlider.value = Float(redField.text ?? "0") ?? 0.0
+        greenSlider.value = Float(greenField.text ?? "0") ?? 0.0
+        blueSlider.value = Float(blueField.text ?? "0") ?? 0.0
     }
-    @IBAction func setRed() {
-    }
-    @IBAction func setGreen() {
-    }
-    @IBAction func setBlue() {
+    
+    @IBAction func saveButton() {
+        delegate?.setColor(color: colorView.backgroundColor ?? UIColor(red: 0, green: 1, blue: 0, alpha: 1))
     }
     
 }
-

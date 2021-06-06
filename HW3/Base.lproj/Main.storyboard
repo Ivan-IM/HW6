@@ -21,7 +21,7 @@
                     <navigationItem key="navigationItem" id="ESe-Pk-aXR">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="qmr-Rh-4LR">
                             <connections>
-                                <segue destination="Ahf-0z-Qcs" kind="presentation" modalPresentationStyle="fullScreen" id="JyV-Tl-gfT"/>
+                                <segue destination="1eV-0e-a6r" kind="show" id="uey-5v-KSa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -131,6 +131,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="rgbTextField:" destination="1eV-0e-a6r" eventType="editingDidEnd" id="3lG-nC-gMB"/>
                                                     <action selector="setRed" destination="1eV-0e-a6r" eventType="editingDidEnd" id="Igd-wg-Vqs"/>
                                                 </connections>
                                             </textField>
@@ -139,6 +140,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="rgbTextField:" destination="1eV-0e-a6r" eventType="editingDidEnd" id="L57-hK-SdX"/>
                                                     <action selector="setGreen:" destination="1eV-0e-a6r" eventType="editingDidEnd" id="ccF-Qp-Ubw"/>
                                                 </connections>
                                             </textField>
@@ -147,6 +149,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="rgbTextField:" destination="1eV-0e-a6r" eventType="editingDidEnd" id="sGD-br-Hhg"/>
                                                     <action selector="setBlue" destination="1eV-0e-a6r" eventType="editingDidEnd" id="W98-uS-UYQ"/>
                                                 </connections>
                                             </textField>
@@ -157,6 +160,19 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOd-C2-YxG">
+                                <rect key="frame" x="179.5" y="801" width="55" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="DoneButton:" destination="1eV-0e-a6r" eventType="touchDragExit" id="v1r-CT-0nr"/>
+                                    <action selector="doneButton" destination="1eV-0e-a6r" eventType="editingDidEndOnExit" id="eR3-bJ-WO7"/>
+                                    <action selector="saveButton" destination="1eV-0e-a6r" eventType="touchUpInside" id="yEd-p9-w9r"/>
+                                    <segue destination="H9B-jj-zgL" kind="unwind" unwindAction="unwindWithSegue:" id="hdI-Vu-YPu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g8G-Iq-YTJ"/>
                         <color key="backgroundColor" red="0.14211790190000001" green="0.29647090469999998" blue="0.57609620340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -164,18 +180,14 @@
                             <constraint firstAttribute="trailing" secondItem="8Lv-85-i9x" secondAttribute="trailing" constant="16" id="7Ra-r9-YvV"/>
                             <constraint firstItem="8Lv-85-i9x" firstAttribute="leading" secondItem="g8G-Iq-YTJ" secondAttribute="leading" constant="16" id="8DH-Bh-GtJ"/>
                             <constraint firstItem="g8G-Iq-YTJ" firstAttribute="trailing" secondItem="zQG-I4-qZ1" secondAttribute="trailing" constant="16" id="DUv-d0-hQ7"/>
+                            <constraint firstItem="g8G-Iq-YTJ" firstAttribute="bottom" secondItem="KOd-C2-YxG" secondAttribute="bottom" constant="25" id="M5L-Et-k9Q"/>
+                            <constraint firstItem="KOd-C2-YxG" firstAttribute="centerX" secondItem="g8G-Iq-YTJ" secondAttribute="centerX" id="M9E-I7-isE"/>
                             <constraint firstItem="zQG-I4-qZ1" firstAttribute="top" secondItem="g8G-Iq-YTJ" secondAttribute="top" constant="34" id="a77-Fr-QcR"/>
                             <constraint firstItem="zQG-I4-qZ1" firstAttribute="leading" secondItem="g8G-Iq-YTJ" secondAttribute="leading" constant="16" id="l1o-Ue-SDE"/>
                             <constraint firstItem="8Lv-85-i9x" firstAttribute="top" secondItem="zQG-I4-qZ1" secondAttribute="bottom" constant="53" id="qjw-1c-E7v"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0Wd-EU-9UJ">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="zHY-fV-vgg">
-                            <connections>
-                                <action selector="donButton:" destination="1eV-0e-a6r" id="LiF-aV-lTk"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="0Wd-EU-9UJ"/>
                     <connections>
                         <outlet property="blueField" destination="114-mJ-J59" id="Yei-g8-Mug"/>
                         <outlet property="blueLabel" destination="wQ2-mj-Va5" id="gj1-rA-8iI"/>
@@ -190,12 +202,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLe-g2-pBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="H9B-jj-zgL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3176.811594202899" y="79.6875"/>
+            <point key="canvasLocation" x="1740.5797101449277" y="79.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c1C-Yg-IyD">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cTO-mb-f5l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pdg-4G-kAp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Fk-xx-jrd">
@@ -207,33 +221,16 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="idi-er-hjV"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cTO-mb-f5l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="v1Y-k9-GB8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ahf-0z-Qcs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="riL-h4-Iq0"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Aa-Ob-6Qk">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1eV-0e-a6r" kind="relationship" relationship="rootViewController" id="pX2-81-0bp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hr0-Ab-0Jy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2266.666666666667" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
